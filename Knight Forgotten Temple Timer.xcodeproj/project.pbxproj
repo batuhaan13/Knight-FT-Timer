@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EEA252592F27947600023C30 /* bip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EEA252572F27947600023C30 /* bip.mp3 */; };
+		EEA2525A2F27947600023C30 /* spawn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EEA252582F27947600023C30 /* spawn.mp3 */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		EEE0B5A42F2773A7003BACDD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EEA252572F27947600023C30 /* bip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bip.mp3; sourceTree = "<group>"; };
+		EEA252582F27947600023C30 /* spawn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spawn.mp3; sourceTree = "<group>"; };
 		EEE0B5962F2773A6003BACDD /* Knight Forgotten Temple Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Knight Forgotten Temple Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE0B5A32F2773A7003BACDD /* Knight Forgotten Temple TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Knight Forgotten Temple TimerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE0B5AD2F2773A7003BACDD /* Knight Forgotten Temple TimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Knight Forgotten Temple TimerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,10 +79,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EEE0B58D2F2773A6003BACDD = {
+		EEA252562F27945E00023C30 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				EEE0B5982F2773A6003BACDD /* Knight Forgotten Temple Timer */,
+				EEA252572F27947600023C30 /* bip.mp3 */,
+				EEA252582F27947600023C30 /* spawn.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EEE0B58D2F2773A6003BACDD = {
+			isa = PBXGroup;
+			children = (
+				EEA252562F27945E00023C30 /* Resources */,
 				EEE0B5A62F2773A7003BACDD /* Knight Forgotten Temple TimerTests */,
 				EEE0B5B02F2773A7003BACDD /* Knight Forgotten Temple TimerUITests */,
 				EEE0B5972F2773A6003BACDD /* Products */,
@@ -212,6 +229,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEA252592F27947600023C30 /* bip.mp3 in Resources */,
+				EEA2525A2F27947600023C30 /* spawn.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
