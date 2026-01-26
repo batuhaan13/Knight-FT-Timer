@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		EEE0B5A42F2773A7003BACDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEE0B58E2F2773A6003BACDD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEE0B5952F2773A6003BACDD;
+			remoteInfo = "Knight Forgotten Temple Timer";
+		};
+		EEE0B5AE2F2773A7003BACDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEE0B58E2F2773A6003BACDD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEE0B5952F2773A6003BACDD;
+			remoteInfo = "Knight Forgotten Temple Timer";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EEE0B5962F2773A6003BACDD /* Knight Forgotten Temple Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Knight Forgotten Temple Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEE0B5A32F2773A7003BACDD /* Knight Forgotten Temple TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Knight Forgotten Temple TimerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEE0B5AD2F2773A7003BACDD /* Knight Forgotten Temple TimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Knight Forgotten Temple TimerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EEE0B5982F2773A6003BACDD /* Knight Forgotten Temple Timer */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Knight Forgotten Temple Timer";
+			sourceTree = "<group>";
+		};
+		EEE0B5A62F2773A7003BACDD /* Knight Forgotten Temple TimerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Knight Forgotten Temple TimerTests";
+			sourceTree = "<group>";
+		};
+		EEE0B5B02F2773A7003BACDD /* Knight Forgotten Temple TimerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Knight Forgotten Temple TimerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEE0B5932F2773A6003BACDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEE0B5A02F2773A7003BACDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEE0B5AA2F2773A7003BACDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EEE0B58D2F2773A6003BACDD = {
+			isa = PBXGroup;
+			children = (
+				EEE0B5982F2773A6003BACDD /* Knight Forgotten Temple Timer */,
+				EEE0B5A62F2773A7003BACDD /* Knight Forgotten Temple TimerTests */,
+				EEE0B5B02F2773A7003BACDD /* Knight Forgotten Temple TimerUITests */,
+				EEE0B5972F2773A6003BACDD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EEE0B5972F2773A6003BACDD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEE0B5962F2773A6003BACDD /* Knight Forgotten Temple Timer.app */,
+				EEE0B5A32F2773A7003BACDD /* Knight Forgotten Temple TimerTests.xctest */,
+				EEE0B5AD2F2773A7003BACDD /* Knight Forgotten Temple TimerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEE0B5952F2773A6003BACDD /* Knight Forgotten Temple Timer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEE0B5B72F2773A7003BACDD /* Build configuration list for PBXNativeTarget "Knight Forgotten Temple Timer" */;
+			buildPhases = (
+				EEE0B5922F2773A6003BACDD /* Sources */,
+				EEE0B5932F2773A6003BACDD /* Frameworks */,
+				EEE0B5942F2773A6003BACDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EEE0B5982F2773A6003BACDD /* Knight Forgotten Temple Timer */,
+			);
+			name = "Knight Forgotten Temple Timer";
+			packageProductDependencies = (
+			);
+			productName = "Knight Forgotten Temple Timer";
+			productReference = EEE0B5962F2773A6003BACDD /* Knight Forgotten Temple Timer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EEE0B5A22F2773A7003BACDD /* Knight Forgotten Temple TimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEE0B5BA2F2773A7003BACDD /* Build configuration list for PBXNativeTarget "Knight Forgotten Temple TimerTests" */;
+			buildPhases = (
+				EEE0B59F2F2773A7003BACDD /* Sources */,
+				EEE0B5A02F2773A7003BACDD /* Frameworks */,
+				EEE0B5A12F2773A7003BACDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEE0B5A52F2773A7003BACDD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EEE0B5A62F2773A7003BACDD /* Knight Forgotten Temple TimerTests */,
+			);
+			name = "Knight Forgotten Temple TimerTests";
+			packageProductDependencies = (
+			);
+			productName = "Knight Forgotten Temple TimerTests";
+			productReference = EEE0B5A32F2773A7003BACDD /* Knight Forgotten Temple TimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EEE0B5AC2F2773A7003BACDD /* Knight Forgotten Temple TimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEE0B5BD2F2773A7003BACDD /* Build configuration list for PBXNativeTarget "Knight Forgotten Temple TimerUITests" */;
+			buildPhases = (
+				EEE0B5A92F2773A7003BACDD /* Sources */,
+				EEE0B5AA2F2773A7003BACDD /* Frameworks */,
+				EEE0B5AB2F2773A7003BACDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEE0B5AF2F2773A7003BACDD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EEE0B5B02F2773A7003BACDD /* Knight Forgotten Temple TimerUITests */,
+			);
+			name = "Knight Forgotten Temple TimerUITests";
+			packageProductDependencies = (
+			);
+			productName = "Knight Forgotten Temple TimerUITests";
+			productReference = EEE0B5AD2F2773A7003BACDD /* Knight Forgotten Temple TimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEE0B58E2F2773A6003BACDD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					EEE0B5952F2773A6003BACDD = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					EEE0B5A22F2773A7003BACDD = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = EEE0B5952F2773A6003BACDD;
+					};
+					EEE0B5AC2F2773A7003BACDD = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = EEE0B5952F2773A6003BACDD;
+					};
+				};
+			};
+			buildConfigurationList = EEE0B5912F2773A6003BACDD /* Build configuration list for PBXProject "Knight Forgotten Temple Timer" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EEE0B58D2F2773A6003BACDD;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = EEE0B5972F2773A6003BACDD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEE0B5952F2773A6003BACDD /* Knight Forgotten Temple Timer */,
+				EEE0B5A22F2773A7003BACDD /* Knight Forgotten Temple TimerTests */,
+				EEE0B5AC2F2773A7003BACDD /* Knight Forgotten Temple TimerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEE0B5942F2773A6003BACDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEE0B5A12F2773A7003BACDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEE0B5AB2F2773A7003BACDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEE0B5922F2773A6003BACDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEE0B59F2F2773A7003BACDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEE0B5A92F2773A7003BACDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EEE0B5A52F2773A7003BACDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEE0B5952F2773A6003BACDD /* Knight Forgotten Temple Timer */;
+			targetProxy = EEE0B5A42F2773A7003BACDD /* PBXContainerItemProxy */;
+		};
+		EEE0B5AF2F2773A7003BACDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEE0B5952F2773A6003BACDD /* Knight Forgotten Temple Timer */;
+			targetProxy = EEE0B5AE2F2773A7003BACDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EEE0B5B52F2773A7003BACDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = BX569Z937L;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EEE0B5B62F2773A7003BACDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = BX569Z937L;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEE0B5B82F2773A7003BACDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BX569Z937L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "forgottentempletimer.Knight-Forgotten-Temple-Timer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EEE0B5B92F2773A7003BACDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BX569Z937L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "forgottentempletimer.Knight-Forgotten-Temple-Timer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EEE0B5BB2F2773A7003BACDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BX569Z937L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "forgottentempletimer.Knight-Forgotten-Temple-TimerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Knight Forgotten Temple Timer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Knight Forgotten Temple Timer";
+			};
+			name = Debug;
+		};
+		EEE0B5BC2F2773A7003BACDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BX569Z937L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "forgottentempletimer.Knight-Forgotten-Temple-TimerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Knight Forgotten Temple Timer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Knight Forgotten Temple Timer";
+			};
+			name = Release;
+		};
+		EEE0B5BE2F2773A7003BACDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BX569Z937L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "forgottentempletimer.Knight-Forgotten-Temple-TimerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Knight Forgotten Temple Timer";
+			};
+			name = Debug;
+		};
+		EEE0B5BF2F2773A7003BACDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BX569Z937L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "forgottentempletimer.Knight-Forgotten-Temple-TimerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Knight Forgotten Temple Timer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEE0B5912F2773A6003BACDD /* Build configuration list for PBXProject "Knight Forgotten Temple Timer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEE0B5B52F2773A7003BACDD /* Debug */,
+				EEE0B5B62F2773A7003BACDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEE0B5B72F2773A7003BACDD /* Build configuration list for PBXNativeTarget "Knight Forgotten Temple Timer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEE0B5B82F2773A7003BACDD /* Debug */,
+				EEE0B5B92F2773A7003BACDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEE0B5BA2F2773A7003BACDD /* Build configuration list for PBXNativeTarget "Knight Forgotten Temple TimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEE0B5BB2F2773A7003BACDD /* Debug */,
+				EEE0B5BC2F2773A7003BACDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEE0B5BD2F2773A7003BACDD /* Build configuration list for PBXNativeTarget "Knight Forgotten Temple TimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEE0B5BE2F2773A7003BACDD /* Debug */,
+				EEE0B5BF2F2773A7003BACDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEE0B58E2F2773A6003BACDD /* Project object */;
+}
