@@ -8,9 +8,9 @@
 import SwiftUI
 import AVFoundation
 import Combine
-#if os(iOS)
+
 import UIKit
-#endif
+
 
 final class SoundManager {
     static let shared = SoundManager()
@@ -78,7 +78,7 @@ final class FTTimerViewModel: ObservableObject {
 
     // Event listesi: mm:ss -> isim
     private let eventSpecs: [(minutes: Int, seconds: Int, name: String)] = [
-        (6,0,"Pooka"),(6,12,"Lard Orc"),(6,47,"Orc Archer"),(7,0,"Trol Berserker"),(7,12,"Baron"),(7,47,"Death Knight"),(8,0,"Crimson Wing"),(8,12,"Scolar"),(8,17,"Tyoon"),(8,30,"Troll"),(9,17,"Ash Knight"),(9,30,"Haunga"),(10,0,"Deruvish"),(10,12,"Lamia"),(10,35,"Urak Hai"),(10,47,"Harppy"),(11,0,"Dragon Tooth Knight"),(11,35,"Urak Type"),(11,47,"Wraith"),(12,30,"Apostle"),(12,47,"Garuna"),(13,17,"Lamiros"),(13,30,"Deruvish"),(14,0,"Blood Skeer"),(14,12,"Orc Sniper"),(14,17,"Stone Golem"),(14,30,"Haunga"),(14,41,"Bugger"),(15,17,"Raven Harpy"),(15,30,"Sheriff"),(15,35,"Dragon Tooth Knight"),(16,47,"Lamenation"),(17,0,"Dark Stone"),(17,12,"Lich"),(18,0,"Hob Goblin"),(18,12,"Troll"),(18,17,"Urak Type"),(19,40,"Sheriff"),(19,47,"Manticore"),(20,0,"Burning Skeleton"),(20,12,"Lamia"),(20,47,"Fallen Angel"),(21,0,"Grell"),(21,12,"Mastedon"),(22,12,"Centaur"),(22,17,"Goblin Bauncer"),(22,37,"Harrpy"),(23,17,"Tyoon"),(23,30,"Stone Golem"),(23,37,"Beast"),(24,35,"Giant Golem"),(24,47,"Haunga Warrior"),(25,17,"Troll Warrior"),(25,30,"Reaper"),(25,37,"Dark Mare")
+        (6,0,"Pooka"),(6,12,"Lard Orc"),(6,47,"Orc Archer"),(7,0,"Trol Berserker"),(7,12,"Baron"),(7,47,"Death Knight"),(8,0,"Crimson Wing"),(8,12,"Scolar"),(8,17,"Tyoon"),(8,30,"Troll"),(9,17,"Ash Knight"),(9,30,"Haunga"),(10,0,"Deruvish"),(10,12,"Lamia"),(10,35,"Urak Hai"),(10,47,"Harppy"),(11,0,"Dragon Tooth Knight"),(11,35,"Uruk Tron"),(11,47,"Wraith"),(12,30,"Apostle"),(12,47,"Garuna"),(13,17,"Lamiros"),(13,30,"Deruvish"),(14,0,"Blood seeker"),(14,12,"Orc Sniper"),(14,17,"Stone Golem"),(14,30,"Haunga"),(14,41,"Bugger"),(15,17,"Raven Harpy"),(15,30,"Sheriff"),(15,35,"Dragon Tooth Knight"),(16,47,"Lamenation"),(17,0,"Dark Stone"),(17,12,"Lich"),(18,0,"Hob Goblin"),(18,12,"Troll"),(18,17,"Uruk Tron"),(19,40,"Sheriff"),(19,47,"Manticore"),(20,0,"Burning Skeleton"),(20,12,"Lamia"),(20,47,"Fallen Angel"),(21,0,"Grell"),(21,12,"Mastedon"),(22,12,"Centaur"),(22,17,"Goblin Bauncer"),(22,37,"Harrpy"),(23,17,"Tyoon"),(23,30,"Stone Golem"),(23,37,"Beast"),(24,35,"Giant Golem"),(24,47,"Haunga Warrior"),(25,17,"Troll Warrior"),(25,30,"Reaper"),(25,37,"Dark Mare")
     ]
 
     private var events: [(date: Date, name: String)] = []
@@ -173,7 +173,7 @@ final class FTTimerViewModel: ObservableObject {
     private func buildPookaEvents() {
         guard let start = startDate else { return }
         let specs: [(Int, Int, String)] = [
-            (0,0,"Pooka"),(0,12,"Lard Orc"),(0,47,"Orc Archer"),(1,0,"Trol Berserker"),(1,12,"Baron"),(1,47,"Death Knight"),(2,0,"Crimson Wing"),(2,12,"Scolar"),(2,17,"Tyoon"),(2,30,"Troll"),(3,17,"Ash Knight"),(3,30,"Haunga"),(4,0,"Deruvish"),(4,12,"Lamia"),(4,35,"Urak Hai"),(4,47,"Harppy"),(5,0,"Dragon Tooth Knight"),(5,35,"Urak Type"),(5,47,"Wraith"),(6,30,"Apostle"),(6,47,"Garuna"),(7,17,"Lamiros"),(7,30,"Deruvish"),(8,0,"Blood Skeer"),(8,12,"Orc Sniper"),(8,17,"Stone Golem"),(8,26,"Haunga"),(8,41,"Bugger"),(9,17,"Raven Harpy"),(9,30,"Sheriff"),(9,35,"Dragon Tooth Knight"),(10,47,"Lamenation"),(11,0,"Dark Stone"),(11,12,"Lich"),(12,0,"Hob Goblin"),(12,12,"Troll"),(12,17,"Urak Type"),(13,40,"Sheriff"),(13,47,"Manticore"),(14,0,"Burning Skeleton"),(14,12,"Lamia"),(14,47,"Fallen Angel"),(15,0,"Grell"),(15,12,"Mastedon"),(16,12,"Centaur"),(16,17,"Goblin Bauncer"),(16,37,"Harrpy"),(17,17,"Tyoon"),(17,30,"Stone Golem"),(17,37,"Beast"),(18,35,"Giant Golem"),(18,47,"Haunga Warrior"),(19,17,"Troll Warrior"),(19,30,"Reaper"),(19,37,"Dark Mare")
+            (0,0,"Pooka"),(0,12,"Lard Orc"),(0,47,"Orc Archer"),(1,0,"Trol Berserker"),(1,12,"Baron"),(1,47,"Death Knight"),(2,0,"Crimson Wing"),(2,12,"Scolar"),(2,17,"Tyoon"),(2,30,"Troll"),(3,17,"Ash Knight"),(3,30,"Haunga"),(4,0,"Deruvish"),(4,12,"Lamia"),(4,35,"Urak Hai"),(4,47,"Harppy"),(5,0,"Dragon Tooth Knight"),(5,35,"Uruk Tron"),(5,47,"Wraith"),(6,30,"Apostle"),(6,47,"Garuna"),(7,17,"Lamiros"),(7,30,"Deruvish"),(8,0,"Blood Seeker"),(8,12,"Orc Sniper"),(8,17,"Stone Golem"),(8,26,"Haunga"),(8,41,"Bugger"),(9,17,"Raven Harpy"),(9,30,"Sheriff"),(9,35,"Dragon Tooth Knight"),(10,47,"Lamenation"),(11,0,"Dark Stone"),(11,12,"Lich"),(12,0,"Hob Goblin"),(12,12,"Troll"),(12,17,"Uruk Tron"),(13,40,"Sheriff"),(13,47,"Manticore"),(14,0,"Burning Skeleton"),(14,12,"Lamia"),(14,47,"Fallen Angel"),(15,0,"Grell"),(15,12,"Mastedon"),(16,12,"Centaur"),(16,17,"Goblin Bouncer"),(16,37,"Harrpy"),(17,17,"Tyoon"),(17,30,"Stone Golem"),(17,37,"Beast"),(18,35,"Giant Golem"),(18,47,"Haunga Warrior"),(19,17,"Troll Warrior"),(19,30,"Reaper"),(19,37,"Dark Mare")
         ]
         events = specs.map { (m,s,name) in
             let offset = TimeInterval(m * 60 + s)
@@ -184,7 +184,7 @@ final class FTTimerViewModel: ObservableObject {
     private func build2210Events() {
         guard let start = startDate else { return }
         let specs: [(Int, Int, String)] = [
-            (0,0,"Lamenation"),(0,13,"Dark Stone"),(0,25,"Lich"),(1,13,"Hob Goblin"),(1,25,"Troll"),(1,30,"Urak Type"),(2,53,"Sheriff"),(3,0,"Manticore"),(3,13,"Burning Skeleton"),(3,25,"Lamia"),(4,0,"Fallen Angel"),(4,13,"Grell"),(4,25,"Mastedon"),(5,25,"Centaur"),(5,30,"Goblin Bauncer"),(5,50,"Harrpy"),(6,30,"Tyoon"),(6,43,"Stone Golem"),(6,50,"Beast"),(7,48,"Giant Golem"),(8,0,"Haunga Warrior"),(8,30,"Troll Warrior"),(8,43,"Reaper"),(8,50,"Dark Mare")
+            (0,0,"Lamenation"),(0,13,"Dark Stone"),(0,25,"Lich"),(1,13,"Hob Goblin"),(1,25,"Troll"),(1,30,"Uruk Tron"),(2,53,"Sheriff"),(3,0,"Manticore"),(3,13,"Burning Skeleton"),(3,25,"Lamia"),(4,0,"Fallen Angel"),(4,13,"Grell"),(4,25,"Mastadon"),(5,25,"Centaur"),(5,30,"Goblin Bouncer"),(5,50,"Harrpy"),(6,30,"Tyoon"),(6,43,"Stone Golem"),(6,50,"Beast"),(7,48,"Giant Golem"),(8,0,"Haunga Warrior"),(8,30,"Troll Warrior"),(8,43,"Reaper"),(8,50,"Dark Mare")
         ]
         events = specs.map { (m,s,name) in
             let offset = TimeInterval(m * 60 + s)
@@ -196,9 +196,9 @@ final class FTTimerViewModel: ObservableObject {
         guard let start = startDate else { return }
         let specs: [(Int, Int, String)] = [
             (0,0,"Grell"),
-            (0,12,"Mastedon"),
+            (0,12,"Mastadon"),
             (1,12,"Centaur"),
-            (1,17,"Goblin Bauncer"),
+            (1,17,"Goblin Bouncer"),
             (1,37,"Harrpy"),
             (2,17,"Tyoon"),
             (2,30,"Stone Golem"),
@@ -347,7 +347,10 @@ struct PulsingDotsView: View {
 }
 
 struct ContentView: View {
+    @StateObject private var subVM = SubscriptionViewModel()
+    @State private var showPaywall = false
     @StateObject private var vm = FTTimerViewModel()
+    @State private var hasShownPaywall = false
 
     var body: some View {
         ZStack {
@@ -370,6 +373,11 @@ struct ContentView: View {
 
                 // FT GİRİŞ kartı
                 Button(vm.activeMode == .ft && vm.isRunning ? (vm.currentEventName.isEmpty ? vm.remainingString : vm.currentEventName) : "🎯FT GİRİŞ 1 DK ÖNCESİ") {
+                    if !subVM.isSubscribed {
+                        vm.startIfNeeded()
+                        showPaywall = true
+                        return
+                    }
                     vm.startIfNeeded()
                 }
                 .font(.system(size: 20, weight: .bold, design: .rounded))
@@ -393,6 +401,11 @@ struct ContentView: View {
 
                 // POOKA DALGASI BAŞLANGICI kartı
                 Button(vm.activeMode == .pooka && vm.isRunning ? (vm.currentEventName.isEmpty ? vm.remainingString : vm.currentEventName) : "🐵POOKA DALGASI BAŞLANGICI") {
+                    if !subVM.isSubscribed {
+                        vm.startPookaIfNeeded()
+                        showPaywall = true
+                        return
+                    }
                     vm.startPookaIfNeeded()
                 }
                 .font(.system(size: 20, weight: .bold, design: .rounded))
@@ -418,6 +431,11 @@ struct ContentView: View {
                 // Dalga 1-4 grid
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
                     Button(vm.activeMode == .m2210 && vm.isRunning ? (vm.currentEventName.isEmpty ? vm.remainingString : vm.currentEventName) : "22:10 & 03:10 ") {
+                        if !subVM.isSubscribed {
+                            vm.start2210IfNeeded()
+                            showPaywall = true
+                            return
+                        }
                         vm.start2210IfNeeded()
                     }
                     .font(.system(size: 18, weight: .bold, design: .rounded))
@@ -429,6 +447,11 @@ struct ContentView: View {
                     .cornerRadius(14)
 
                     Button(vm.activeMode == .m2215 && vm.isRunning ? (vm.currentEventName.isEmpty ? vm.remainingString : vm.currentEventName) : "22.15 & 03.15 ") {
+                        if !subVM.isSubscribed {
+                            vm.start2215IfNeeded()
+                            showPaywall = true
+                            return
+                        }
                         vm.start2215IfNeeded()
                     }
                     .font(.system(size: 18, weight: .bold, design: .rounded))
@@ -441,7 +464,7 @@ struct ContentView: View {
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 16)
-
+                
                 // Reklam Banner (Placeholder)
                 HStack {
                     Text("Reklam Alanı")
@@ -458,8 +481,8 @@ struct ContentView: View {
                 .background(
                     LinearGradient(
                         gradient: Gradient(colors: [
-                            Color.black.opacity(0.25),
-                            Color.pink.opacity(0.35)
+                            Color.yellow.opacity(0.55),
+                            Color.pink.opacity(0.77)
                         ]),
                         startPoint: .leading,
                         endPoint: .trailing
@@ -497,6 +520,21 @@ struct ContentView: View {
                 }
             }
             .padding(-19)
+        }
+        .task {
+            await subVM.loadProducts()
+            await subVM.refreshEntitlements()
+        }
+        .fullScreenCover(isPresented: $showPaywall) {
+            PaywallView(subVM: subVM)
+                .onChange(of: subVM.isSubscribed) { _, newValue in
+                    if newValue {
+                        showPaywall = false
+                    }
+                }
+                .onDisappear {
+                    hasShownPaywall = true
+                }
         }
     }
 }
