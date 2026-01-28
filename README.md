@@ -8,7 +8,7 @@ This app provides clear countdowns for event waves and key moments. It is not a 
 ## Support
 If you have any questions, issues, or feedback, please contact:
 
-📧 batuhan.kasar@icloud.coö
+📧 batuhan.kasar@icloud.com
 
 We aim to respond as soon as possible.
 
