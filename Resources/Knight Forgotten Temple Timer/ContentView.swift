@@ -173,7 +173,7 @@ final class FTTimerViewModel: ObservableObject {
     private func buildPookaEvents() {
         guard let start = startDate else { return }
         let specs: [(Int, Int, String)] = [
-            (0,0,"Pooka"),(0,12,"Lard Orc"),(0,47,"Orc Archer"),(1,0,"Trol Berserker"),(1,12,"Baron"),(1,47,"Death Knight"),(2,0,"Crimson Wing"),(2,12,"Scolar"),(2,17,"Tyoon"),(2,30,"Troll"),(3,17,"Ash Knight"),(3,30,"Haunga"),(4,0,"Deruvish"),(4,12,"Lamia"),(4,35,"Urak Hai"),(4,47,"Harppy"),(5,0,"Dragon Tooth Knight"),(5,35,"Uruk Tron"),(5,47,"Wraith"),(6,30,"Apostle"),(6,47,"Garuna"),(7,17,"Lamiros"),(7,30,"Deruvish"),(8,0,"Blood Seeker"),(8,12,"Orc Sniper"),(8,17,"Stone Golem"),(8,26,"Haunga"),(8,41,"Bugger"),(9,17,"Raven Harpy"),(9,30,"Sheriff"),(9,35,"Dragon Tooth Knight"),(10,47,"Lamenation"),(11,0,"Dark Stone"),(11,12,"Lich"),(12,0,"Hob Goblin"),(12,12,"Troll"),(12,17,"Uruk Tron"),(13,40,"Sheriff"),(13,47,"Manticore"),(14,0,"Burning Skeleton"),(14,12,"Lamia"),(14,47,"Fallen Angel"),(15,0,"Grell"),(15,12,"Mastedon"),(16,12,"Centaur"),(16,17,"Goblin Bouncer"),(16,37,"Harrpy"),(17,17,"Tyoon"),(17,30,"Stone Golem"),(17,37,"Beast"),(18,35,"Giant Golem"),(18,47,"Haunga Warrior"),(19,17,"Troll Warrior"),(19,30,"Reaper"),(19,37,"Dark Mare")
+            (0,0,"Pooka"),(0,12,"Lard Orc"),(0,47,"Orc Archer"),(1,0,"Troll Warrior"),(1,12,"Baron"),(1,47,"Death Knight"),(2,0,"Crimson Wing"),(2,12,"Scolar"),(2,17,"Tyoon"),(2,30,"Troll"),(3,17,"Ash Knight"),(3,30,"Haunga"),(4,0,"Deruvish"),(4,12,"Lamia"),(4,35,"Urak Hai"),(4,47,"Harppy"),(5,0,"Dragon Tooth Knight"),(5,35,"Uruk Tron"),(5,47,"Wraith"),(6,30,"Apostle"),(6,47,"Garuna"),(7,17,"Lamiros"),(7,30,"Deruvish"),(8,0,"Blood Seeker"),(8,12,"Orc Sniper"),(8,17,"Stone Golem"),(8,26,"Haunga"),(8,41,"Bugger"),(9,17,"Raven Harpy"),(9,30,"Sheriff"),(9,35,"Dragon Tooth Knight"),(10,47,"Lamenation"),(11,0,"Dark Stone"),(11,12,"Lich"),(12,0,"Hob Goblin"),(12,12,"Troll"),(12,17,"Uruk Tron"),(13,40,"Sheriff"),(13,47,"Manticore"),(14,0,"Burning Skeleton"),(14,12,"Lamia"),(14,47,"Fallen Angel"),(15,0,"Grell"),(15,12,"Mastedon"),(16,12,"Centaur"),(16,17,"Goblin Bouncer"),(16,37,"Harrpy"),(17,17,"Tyoon"),(17,30,"Stone Golem"),(17,37,"Beast"),(18,35,"Giant Golem"),(18,47,"Haunga Warrior"),(19,17,"Troll Warrior"),(19,30,"Reaper"),(19,37,"Dark Mare")
         ]
         events = specs.map { (m,s,name) in
             let offset = TimeInterval(m * 60 + s)
@@ -279,8 +279,8 @@ final class FTTimerViewModel: ObservableObject {
         guard isPookaMode else { return }
         // We want beeps at 22:04, 22:03, 22:02, 22:01 and spawn at 22:00 (from global remaining time)
         // Convert target times to seconds
-        let targetsBeep: [Int] = [22*60 + 4, 22*60 + 3, 22*60 + 2, 22*60 + 1]
-        let targetSpawn: Int = 22*60 + 0
+        let targetsBeep: [Int] = [4, 3, 2, 1]
+        let targetSpawn: Int = 0
         let tol = 0 // use exact integer matching since remaining is Int
         for t in targetsBeep {
             if abs(remaining - t) <= tol {
@@ -360,8 +360,8 @@ struct ContentView: View {
                 // Üst başlık
                 PulsingDotsView()
                     .padding(.bottom, 2)
-                Text("⏳FT Timer Pro")
-                    .font(.system(size: 44, weight: .bold))
+                Text("⏳KO FT KOMUT PRO")
+                    .font(.system(size: 34, weight: .bold))
                     .tracking(0.8)
                     .foregroundStyle(
                         LinearGradient(colors: [Color.white.opacity(0.95), Color.white.opacity(0.8), Color.pink.opacity(0.8)], startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -464,33 +464,6 @@ struct ContentView: View {
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 16)
-                
-                // Reklam Banner (Placeholder)
-                HStack {
-                    Text("Reklam Alanı")
-                        .font(.system(size: 18, weight: .semibold, design: .rounded))
-                        .foregroundStyle(.white.opacity(0.9))
-                        .padding(.leading, 16)
-                    Spacer()
-                    Image(systemName: "rectangle.adbadge.fill")
-                        .foregroundStyle(.white.opacity(0.9))
-                        .imageScale(.large)
-                        .padding(.trailing, 16)
-                }
-                .frame(maxWidth: .infinity, minHeight: 90)
-                .background(
-                    LinearGradient(
-                        gradient: Gradient(colors: [
-                            Color.yellow.opacity(0.55),
-                            Color.pink.opacity(0.77)
-                        ]),
-                        startPoint: .leading,
-                        endPoint: .trailing
-                    )
-                )
-                .cornerRadius(16)
-                .padding(.horizontal, 20)
-                .padding(.bottom, 8)
             }
             .overlay(alignment: .bottom) {
                 if vm.showResetToast {

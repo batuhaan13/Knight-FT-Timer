@@ -33,7 +33,7 @@ struct PaywallView: View {
                 Text("PREMIUM👑")
                     .font(.largeTitle.bold())
                 
-                Text("7 gün ücretsiz dene. Deneme süresi bitince aylık 149,99₺ ile devam eder. İstediğin zaman iptal edebilirsin.")
+                Text("7 gün ücretsiz dene. Deneme süresi bitince aylık 99,99₺ ile devam eder. İstediğin zaman iptal edebilirsin.")
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white.opacity(0.9))
@@ -54,7 +54,7 @@ struct PaywallView: View {
                         .foregroundColor(.white)
                         .cornerRadius(14)
                     } else {
-                        Button("149,99 ₺'ye bir aylık satın al ve kusursuz komut ile kazan!🚀") {
+                        Button("99,99 ₺'ye bir aylık satın al ve kusursuz komut ile kazan!🚀") {
                             Task { await subVM.loadProducts() }
                         }
                         .font(.system(.title3, design: .rounded).bold())

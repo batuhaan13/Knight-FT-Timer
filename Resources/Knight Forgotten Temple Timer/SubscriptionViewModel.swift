@@ -13,14 +13,14 @@ final class SubscriptionViewModel: ObservableObject {
 
     // MARK: - Product IDs
     // Replace with your actual App Store Connect product IDs if you add more tiers
-    static let monthlyProductID = "promonthly.forgottentempleko"
+    static let monthlyProductID = "promonth.forgottentempleko"
     static let productIDs: Set<String> = [monthlyProductID]
 
     // MARK: - Init
     init() {
-//        Task {
-//            await loadProducts()
-//        }
+      Task {
+            await loadProducts()
+        }
         // Begin observing transaction updates as soon as the VM is created
         observeTransactions()
     }
@@ -33,7 +33,7 @@ final class SubscriptionViewModel: ObservableObject {
         do {
             products = try await Product.products(for: Array(Self.productIDs))
             if products.isEmpty {
-                purchaseError = "Ürünler yüklenemedi. Product ID'leri App Store Connect ile eşleşiyor mu?"
+                purchaseError = "Ürünler yüklenemedi"
             }
         } catch {
             purchaseError = "Product load error: \(error.localizedDescription)"

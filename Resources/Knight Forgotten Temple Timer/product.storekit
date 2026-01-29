@@ -9,7 +9,7 @@
       }
     ]
   },
-  "identifier" : "4F65C25E",
+  "identifier" : "059D5616",
   "nonRenewingSubscriptions" : [
 
   ],
@@ -17,14 +17,11 @@
 
   ],
   "settings" : {
-    "_applicationInternalID" : "6758308740",
     "_askToBuyEnabled" : false,
     "_billingGracePeriodEnabled" : false,
     "_billingIssuesEnabled" : false,
-    "_developerTeamID" : "BX569Z937L",
     "_disableDialogs" : false,
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 791244888.905393,
     "_locale" : "en_US",
     "_renewalBillingIssuesEnabled" : false,
     "_storefront" : "USA",
@@ -35,9 +32,13 @@
   },
   "subscriptionGroups" : [
     {
-      "id" : "21906783",
+      "id" : "761A214A",
       "localizations" : [
-
+        {
+          "description" : "Aylık Ödeme",
+          "displayName" : "Aylık",
+          "locale" : "tr"
+        }
       ],
       "name" : "Pro Access",
       "subscriptions" : [
@@ -51,24 +52,23 @@
           "displayPrice" : "2.99",
           "familyShareable" : false,
           "groupNumber" : 1,
-          "internalID" : "6758309164",
+          "internalID" : "3D64865F",
           "introductoryOffer" : {
-            "internalID" : "7E181883",
-            "numberOfPeriods" : 1,
+            "internalID" : "8AD1B696",
             "paymentMode" : "free",
             "subscriptionPeriod" : "P1W"
           },
           "localizations" : [
             {
-              "description" : "Tüm premium özelliklere sınırsız erişim.",
-              "displayName" : "Pro Membership",
-              "locale" : "tr"
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
             }
           ],
-          "productID" : "promonthly.forgottentempleko",
+          "productID" : "promonth.forgottentempleko",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Pro Access",
-          "subscriptionGroupID" : "21906783",
+          "subscriptionGroupID" : "761A214A",
           "type" : "RecurringSubscription",
           "winbackOffers" : [
 
