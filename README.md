@@ -1,6 +1,6 @@
 FT Timer – Privacy Policy & Support
 
-Last updated: 07.02.2026
+Last updated: February 7, 2026
 
 Support
 
