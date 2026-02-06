@@ -1,6 +1,6 @@
 FT Timer – Privacy Policy & Support
 
-Last updated: [bugünün tarihi]
+Last updated: 07.02.2026
 
 Support
 
