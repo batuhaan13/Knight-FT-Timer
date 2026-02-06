@@ -33,7 +33,7 @@ final class SubscriptionViewModel: ObservableObject {
         do {
             products = try await Product.products(for: Array(Self.productIDs))
             if products.isEmpty {
-                purchaseError = "Ürünler yüklenemedi"
+                purchaseError = "Ürünler yüklenemedi "
             }
         } catch {
             purchaseError = "Product load error: \(error.localizedDescription)"

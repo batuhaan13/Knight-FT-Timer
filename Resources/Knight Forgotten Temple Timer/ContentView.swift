@@ -360,7 +360,7 @@ struct ContentView: View {
                 // Üst başlık
                 PulsingDotsView()
                     .padding(.bottom, 2)
-                Text("⏳KO FT KOMUT PRO")
+                Text("⏳FT Timer - PRO")
                     .font(.system(size: 34, weight: .bold))
                     .tracking(0.8)
                     .foregroundStyle(
@@ -372,73 +372,108 @@ struct ContentView: View {
                     .padding(.top, 8)
 
                 // FT GİRİŞ kartı
-                Button(vm.activeMode == .ft && vm.isRunning ? (vm.currentEventName.isEmpty ? vm.remainingString : vm.currentEventName) : "🎯FT GİRİŞ 1 DK ÖNCESİ") {
+                Button {
                     if !subVM.isSubscribed {
-                        vm.startIfNeeded()
                         showPaywall = true
                         return
                     }
                     vm.startIfNeeded()
+                } label: {
+                    ZStack(alignment: .topTrailing) {
+                        Text(vm.activeMode == .ft && vm.isRunning ? (vm.currentEventName.isEmpty ? vm.remainingString : vm.currentEventName) : "🎯FT GİRİŞ 1 DK ÖNCESİ")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .tracking(0.4)
+                            .frame(maxWidth: .infinity, minHeight: 90)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [
+                                        Color.blue.opacity(0.9),
+                                        Color.blue.opacity(0.9),
+                                        Color.pink.opacity(0.7)
+                                    ]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            .foregroundStyle(.white)
+                            .cornerRadius(16)
+                        if !subVM.isSubscribed {
+                            HStack(spacing: 6) {
+                                Image(systemName: "lock.fill")
+                                    .font(.system(size: 15, weight: .bold))
+                                    .foregroundColor(.white)
+                                    .shadow(color: .pink.opacity(0.55), radius: 2, x: 0, y: 1)
+                                Text("PRO👑")
+                                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                            }
+                            .foregroundColor(.white)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal, 14)
+                            .background(Color.pink.gradient, in: Capsule())
+                            .shadow(color: Color.pink.opacity(0.4), radius: 4, x: 0, y: 2)
+                            .padding(10)
+                        }
+                    }
+                    .opacity(subVM.isSubscribed ? 1.0 : 0.55)
                 }
-                .font(.system(size: 20, weight: .bold, design: .rounded))
-                .tracking(0.4)
-                .frame(maxWidth: .infinity, minHeight: 90)
-                .background(
-                    LinearGradient(
-                        gradient: Gradient(colors: [
-                            Color.blue.opacity(0.9),
-                            Color.blue.opacity(0.9),
-                            Color.pink.opacity(0.7)
-                        ]),
-                        startPoint: .leading,
-                        endPoint: .trailing
-                    )
-                )
-                .foregroundStyle(.white)
-                .cornerRadius(16)
-                .padding(.horizontal, 20)
+                .padding(.horizontal, 40)
                 .padding(.top, 16)
 
                 // POOKA DALGASI BAŞLANGICI kartı
-                Button(vm.activeMode == .pooka && vm.isRunning ? (vm.currentEventName.isEmpty ? vm.remainingString : vm.currentEventName) : "🐵POOKA DALGASI BAŞLANGICI") {
+                Button {
                     if !subVM.isSubscribed {
-                        vm.startPookaIfNeeded()
                         showPaywall = true
                         return
                     }
                     vm.startPookaIfNeeded()
+                } label: {
+                    ZStack(alignment: .topTrailing) {
+                        Text(vm.activeMode == .pooka && vm.isRunning ? (vm.currentEventName.isEmpty ? vm.remainingString : vm.currentEventName) : "🐵POOKA DALGASI BAŞLANGICI")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .tracking(0.4)
+                            .frame(maxWidth: .infinity, minHeight: 90)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [
+                                        Color.green.opacity(0.9),
+                                        Color.green.opacity(0.6),
+                                        Color.pink.opacity(0.7)
+                                    ]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            .foregroundStyle(.white)
+                            .cornerRadius(16)
+                        if !subVM.isSubscribed {
+                            HStack(spacing: 6) {
+                                Image(systemName: "lock.fill")
+                                    .font(.system(size: 15, weight: .bold))
+                                    .foregroundColor(.white)
+                                    .shadow(color: .pink.opacity(0.55), radius: 2, x: 0, y: 1)
+                                Text("PRO👑")
+                                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                            }
+                            .foregroundColor(.white)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal, 14)
+                            .background(Color.pink.gradient, in: Capsule())
+                            .shadow(color: Color.pink.opacity(0.4), radius: 4, x: 0, y: 2)
+                            .padding(10)
+                        }
+                    }
+                    .opacity(subVM.isSubscribed ? 1.0 : 0.55)
                 }
-                .font(.system(size: 20, weight: .bold, design: .rounded))
-                .tracking(0.4)
-                .frame(maxWidth: .infinity, minHeight: 90)
-                .background(
-                    LinearGradient(
-                        gradient: Gradient(colors: [
-                            Color.green.opacity(0.9),
-                            Color.green.opacity(0.6),
-                            Color.pink.opacity(0.7)
-                        ]),
-                        startPoint: .leading,
-                        endPoint: .trailing
-                    )
-                )
-                .foregroundStyle(.white)
-                .cornerRadius(16)
-                .padding(.horizontal, 20)
+                .padding(.horizontal, 40)
                 .padding(.top, 12)
 
 
                 // Dalga 1-4 grid
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
                     Button(vm.activeMode == .m2210 && vm.isRunning ? (vm.currentEventName.isEmpty ? vm.remainingString : vm.currentEventName) : "22:10 & 03:10 ") {
-                        if !subVM.isSubscribed {
-                            vm.start2210IfNeeded()
-                            showPaywall = true
-                            return
-                        }
                         vm.start2210IfNeeded()
                     }
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
                     .monospacedDigit()
                     .tracking(0.3)
                     .frame(maxWidth: .infinity, minHeight: 80)
@@ -447,14 +482,9 @@ struct ContentView: View {
                     .cornerRadius(14)
 
                     Button(vm.activeMode == .m2215 && vm.isRunning ? (vm.currentEventName.isEmpty ? vm.remainingString : vm.currentEventName) : "22.15 & 03.15 ") {
-                        if !subVM.isSubscribed {
-                            vm.start2215IfNeeded()
-                            showPaywall = true
-                            return
-                        }
                         vm.start2215IfNeeded()
                     }
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
                     .monospacedDigit()
                     .tracking(0.3)
                     .frame(maxWidth: .infinity, minHeight: 80)
@@ -462,7 +492,7 @@ struct ContentView: View {
                     .foregroundStyle(.white)
                     .cornerRadius(14)
                 }
-                .padding(.horizontal, 20)
+                .padding(.horizontal, 40)
                 .padding(.top, 16)
             }
             .overlay(alignment: .bottom) {
