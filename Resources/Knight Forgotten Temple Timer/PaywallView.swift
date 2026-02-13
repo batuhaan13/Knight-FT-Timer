@@ -26,11 +26,23 @@ struct PaywallView: View {
                         .minimumScaleFactor(0.70)
                         .padding(.top, 64) // close button boşluğu (overlay)
 
-                    Text("7 gün ücretsiz dene. Deneme süresi bitince abonelik otomatik olarak yenilenir. İstediğin zaman iptal edebilirsin.")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white.opacity(0.9))
-                        .fixedSize(horizontal: false, vertical: true)
+                    VStack(spacing: 6) {
+                        Text("Aylık otomatik yenilenen abonelik")
+                            .font(.footnote.weight(.semibold))
+
+                        Text("7 gün ücretsiz deneme")
+                            .font(.footnote.bold())
+
+                        Text("Deneme süresi bitince abonelik otomatik olarak yenilenir.")
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.85))
+
+                        Text("İstediğin zaman iptal edebilirsin.")
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.85))
+                    }
+                    .multilineTextAlignment(.center)
+
 
                     // ✅ “What you get” block (mini friendly)
                     VStack(alignment: .leading, spacing: 4) {
@@ -65,7 +77,7 @@ struct PaywallView: View {
                             .padding(.top, 4)
                     } else {
                         if let product = subVM.currentProduct {
-                            Button("\(product.displayPrice) ile devam et") {
+                            Button("\(product.displayPrice) / ay ile devam et") {
                                 Task { await subVM.purchase(product: product) }
                             }
                             .font(.system(.title3, design: .rounded).bold())
