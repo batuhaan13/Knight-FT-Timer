@@ -8,7 +8,6 @@ struct PaywallView: View {
 
     @State private var showPurchaseToast: Bool = false
 
-    // ✅ Required links for Apple review (must be in paywall / purchase flow)
     private let privacyPolicyURL = URL(string: "https://batuhaan13.github.io/Knight-FT-Timer/")!
     private let termsOfUseURL = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
 
@@ -16,7 +15,6 @@ struct PaywallView: View {
         ZStack {
             Color(red: 0.05, green: 0.08, blue: 0.2).ignoresSafeArea()
 
-            // ✅ Scrollable content (fixes iPhone mini)
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 12) {
 
@@ -24,7 +22,7 @@ struct PaywallView: View {
                         .font(.system(size: 30, weight: .bold))
                         .lineLimit(1)
                         .minimumScaleFactor(0.70)
-                        .padding(.top, 64) // close button boşluğu (overlay)
+                        .padding(.top, 64)
 
                     VStack(spacing: 6) {
                         Text("Aylık otomatik yenilenen abonelik")
@@ -43,8 +41,6 @@ struct PaywallView: View {
                     }
                     .multilineTextAlignment(.center)
 
-
-                    // ✅ “What you get” block (mini friendly)
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Premium ile şunları açarsın:")
                             .font(.subheadline.bold())
@@ -54,6 +50,7 @@ struct PaywallView: View {
                         Group {
                             Text("• Tüm FT dalga ve boss zamanlayıcıları")
                             Text("• Dalga başlangıçları için hassas geri sayım")
+                            Text("• Kritik anlar için zamanında uyarılar")
                             Text("• Kritik anlar için zamanında uyarılar")
                             Text("• Etkinlik boyunca kesintisiz takip ve kontrol")
                         }
@@ -70,7 +67,7 @@ struct PaywallView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 2)
 
-                    // Purchase
+                    // MARK: - Purchase area
                     if subVM.isLoading {
                         ProgressView("Ürün yükleniyor…")
                             .tint(.white)
@@ -78,7 +75,7 @@ struct PaywallView: View {
                     } else {
                         if let product = subVM.currentProduct {
                             Button("\(product.displayPrice) / ay ile devam et") {
-                                Task { await subVM.purchase(product: product) }
+                                Task { await subVM.purchaseCurrent() }
                             }
                             .font(.system(.title3, design: .rounded).bold())
                             .frame(maxWidth: .infinity, minHeight: 54)
@@ -91,10 +88,10 @@ struct PaywallView: View {
                             )
                             .foregroundColor(.white)
                             .cornerRadius(14)
+                            .disabled(subVM.isLoading) // ✅ sadeleştirildi
                         } else {
-                            // ⚠️ Sabit fiyat yazma (Apple için daha güvenli)
                             Button("Ürün yüklenemedi, tekrar dene") {
-                                Task { await subVM.loadProducts() }
+                                Task { await subVM.reloadProducts() }
                             }
                             .font(.system(.title3, design: .rounded).bold())
                             .frame(maxWidth: .infinity, minHeight: 54)
@@ -107,6 +104,7 @@ struct PaywallView: View {
                             )
                             .foregroundColor(.white)
                             .cornerRadius(14)
+                            .disabled(subVM.isLoading)
                         }
                     }
 
@@ -118,6 +116,7 @@ struct PaywallView: View {
                     .controlSize(.small)
                     .tint(.white.opacity(0.7))
                     .padding(.top, 2)
+                    .disabled(subVM.isLoading)
 
                     if let error = subVM.purchaseError {
                         Text(error)
@@ -127,13 +126,19 @@ struct PaywallView: View {
                             .fixedSize(horizontal: false, vertical: true)
                     }
 
-                    Text("Fiyat bölgenize göre değişiklik gösterebilir. Abonelik otomatik yenilenir. Aboneliği iPhone Ayarları > Apple Kimliği > Abonelikler bölümünden yönetebilirsiniz.")
+                    #if DEBUG
+                    Text("Debug: products=\(subVM.products.count), loading=\(subVM.isLoading)")
+                        .font(.caption2)
+                        .foregroundColor(.white.opacity(0.35))
+                        .multilineTextAlignment(.center)
+                    #endif
+
+                    Text("Fiyat bölgenize göre değişiklik gösterebilir. Abonelik otomatik yenilenir. Aboneliği Ayarlar > Apple Kimliği > Abonelikler bölümünden yönetebilirsiniz.")
                         .font(.footnote)
                         .foregroundColor(.white.opacity(0.8))
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    // Required links
                     VStack(spacing: 6) {
                         Text("Devam ederek Şartlar ve Gizlilik Politikası’nı kabul etmiş olursunuz.")
                             .font(.caption2)
@@ -168,7 +173,6 @@ struct PaywallView: View {
                 .padding(.horizontal)
             }
         }
-        // ✅ Close button on top (always clickable)
         .overlay(alignment: .topLeading) {
             Button { dismiss() } label: {
                 Image(systemName: "chevron.down")
@@ -210,9 +214,10 @@ struct PaywallView: View {
                 }
             }
         }
-        .task {
-            await subVM.loadProducts()
-            await subVM.refreshEntitlements()
+        .onAppear {
+            if subVM.currentProduct == nil && !subVM.isLoading {
+                Task { await subVM.reloadProducts() }
+            }
         }
         .foregroundColor(.white)
     }
