@@ -47,7 +47,7 @@ enum NotificationManager {
     }
 
     static func removeDailyReminders() async {
-        await center.removePendingNotificationRequests(withIdentifiers: dailyIds)
+         center.removePendingNotificationRequests(withIdentifiers: dailyIds)
     }
 
     static func scheduleOneOffTestNotification(after seconds: TimeInterval = 5) async {
