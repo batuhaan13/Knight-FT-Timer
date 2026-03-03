@@ -28,16 +28,17 @@ struct PaywallView: View {
                         Text("Aylık otomatik yenilenen abonelik")
                             .font(.footnote.weight(.semibold))
 
-                        Text("7 gün ücretsiz deneme")
-                            .font(.footnote.bold())
-
-                        Text("Deneme süresi bitince abonelik otomatik olarak yenilenir.")
-                            .font(.caption)
-                            .foregroundColor(.white.opacity(0.85))
-
-                        Text("İstediğin zaman iptal edebilirsin.")
-                            .font(.caption)
-                            .foregroundColor(.white.opacity(0.85))
+                        if let price = subVM.currentProduct?.displayPrice {
+                            Text("\(price)/ay — 7 gün ücretsiz deneme ile başla")
+                                .font(.footnote.bold())
+                        } else if subVM.isLoading {
+                            Text("Ürün bilgisi yükleniyor…")
+                                .font(.footnote)
+                                .redacted(reason: .placeholder)
+                        } else {
+                            Text("7 gün ücretsiz, ardından aylık ücret otomatik yenilenir.")
+                                .font(.footnote.bold())
+                        }
                     }
                     .multilineTextAlignment(.center)
 
@@ -50,7 +51,6 @@ struct PaywallView: View {
                         Group {
                             Text("• Tüm FT dalga ve boss zamanlayıcıları")
                             Text("• Dalga başlangıçları için hassas geri sayım")
-                            Text("• Kritik anlar için zamanında uyarılar")
                             Text("• Kritik anlar için zamanında uyarılar")
                             Text("• Etkinlik boyunca kesintisiz takip ve kontrol")
                         }
@@ -73,11 +73,16 @@ struct PaywallView: View {
                             .tint(.white)
                             .padding(.top, 4)
                     } else {
-                        if let product = subVM.currentProduct {
-                            Button("\(product.displayPrice) / ay ile devam et") {
-                                Task { await subVM.purchaseCurrent() }
+                        if subVM.currentProduct != nil {
+                            Button(action: { Task { await subVM.purchaseCurrent() } }) {
+                                VStack(spacing: 3) {
+                                    Text("Aylık $2.99 – Şimdi Başla")
+                                        .font(.system(.title3, design: .rounded).bold())
+                                    Text("İlk 7 gün tamamen ücretsiz")
+                                        .font(.system(.footnote, design: .rounded).weight(.semibold))
+                                        .foregroundColor(.white.opacity(0.85))
+                                }
                             }
-                            .font(.system(.title3, design: .rounded).bold())
                             .frame(maxWidth: .infinity, minHeight: 54)
                             .background(
                                 LinearGradient(
@@ -88,7 +93,28 @@ struct PaywallView: View {
                             )
                             .foregroundColor(.white)
                             .cornerRadius(14)
-                            .disabled(subVM.isLoading) // ✅ sadeleştirildi
+                            .disabled(subVM.isLoading)
+
+                            if let price = subVM.currentProduct?.displayPrice {
+                                VStack(alignment: .leading, spacing: 6) {
+                                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                                        Text("•")
+                                        Text("Deneme süresi bittikten sonra \(price) olarak otomatik yenilenir.")
+                                            .font(.callout.weight(.bold))
+                                    }
+                                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                                        Text("•")
+                                        Text("Deneme süresi içinde iptal edilirse ücret alınmaz.")
+                                            .font(.callout.weight(.bold))
+                                    }
+                                }
+                                .font(.callout.weight(.semibold))
+                                .foregroundColor(.white.opacity(0.9))
+                            } else {
+                                Text("7 Gün ücretsiz, sonra ayda ücret")
+                                    .font(.callout.weight(.semibold))
+                                    .foregroundColor(.white.opacity(0.9))
+                            }
                         } else {
                             Button("Ürün yüklenemedi, tekrar dene") {
                                 Task { await subVM.reloadProducts() }
@@ -105,6 +131,10 @@ struct PaywallView: View {
                             .foregroundColor(.white)
                             .cornerRadius(14)
                             .disabled(subVM.isLoading)
+
+                            Text("7 Gün ücretsiz, sonra ayda ücret")
+                                .font(.callout.weight(.semibold))
+                                .foregroundColor(.white.opacity(0.9))
                         }
                     }
 
@@ -126,12 +156,7 @@ struct PaywallView: View {
                             .fixedSize(horizontal: false, vertical: true)
                     }
 
-                    #if DEBUG
-                    Text("Debug: products=\(subVM.products.count), loading=\(subVM.isLoading)")
-                        .font(.caption2)
-                        .foregroundColor(.white.opacity(0.35))
-                        .multilineTextAlignment(.center)
-                    #endif
+                  
 
                     Text("Fiyat bölgenize göre değişiklik gösterebilir. Abonelik otomatik yenilenir. Aboneliği Ayarlar > Apple Kimliği > Abonelikler bölümünden yönetebilirsiniz.")
                         .font(.footnote)
@@ -218,7 +243,11 @@ struct PaywallView: View {
             if subVM.currentProduct == nil && !subVM.isLoading {
                 Task { await subVM.reloadProducts() }
             }
+            
         }
         .foregroundColor(.white)
+        
     }
+    
 }
+

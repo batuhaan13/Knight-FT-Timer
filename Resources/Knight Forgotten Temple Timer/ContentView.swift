@@ -347,10 +347,14 @@ struct PulsingDotsView: View {
 }
 
 struct ContentView: View {
+    @Environment(\.scenePhase) private var scenePhase
+
     @StateObject private var subVM = SubscriptionViewModel()
     @State private var showPaywall = false
     @StateObject private var vm = FTTimerViewModel()
     @State private var hasShownPaywall = false
+    @State private var notificationsOn: Bool = false
+    @State private var showNotificationSettingsAlert: Bool = false
 
     var body: some View {
         ZStack {
@@ -466,8 +470,59 @@ struct ContentView: View {
                 }
                 .padding(.horizontal, 40)
                 .padding(.top, 12)
-
-
+                
+                HStack {
+                    Toggle(isOn: $notificationsOn) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Etkinlik Hatırlatmaları")
+                                .font(.system(size: 16, weight: .semibold, design: .rounded))
+                                .foregroundColor(Color.green.opacity(0.8))
+                            Text("Her gün 02:50 ve 21:50'de bildirim gönder")
+                                .font(.footnote)
+                                .foregroundColor(.white.opacity(0.8))
+                        }
+                    }
+                    .tint(Color.pink)
+                }
+                .padding()
+                .background(Color.white.opacity(0.12))
+                .cornerRadius(14)
+                .padding(.horizontal, 40)
+                .padding(.top, 12)
+                .onChange(of: notificationsOn) { _, newValue in
+                    Task {
+                        if newValue {
+                            let granted = await NotificationManager.requestAuthorization()
+                            if granted {
+                                await NotificationManager.scheduleDailyReminders()
+                            } else {
+                                // Turn back off if not granted
+                                await MainActor.run {
+                                    notificationsOn = false
+                                    showNotificationSettingsAlert = true
+                                }
+                            }
+                        } else {
+                            await NotificationManager.removeDailyReminders()
+                        }
+                    }
+                }
+                .alert("Bildirim İzni Gerekli", isPresented: $showNotificationSettingsAlert) {
+                    Button("Ayarlar") {
+                        if let url = URL(string: UIApplication.openSettingsURLString) {
+                            UIApplication.shared.open(url)
+                        }
+                    }
+                    Button("İptal", role: .cancel) { }
+                } message: {
+                    Text("Daha önce bildirim iznini reddettiniz. Tekrar izin isteyemiyoruz. Bildirimleri açmak için Ayarlar > Bildirimler'den izin verin ve bu ekrana geri dönün.")
+                }
+                .task {
+                    let enabled = await NotificationManager.notificationsEnabled()
+                    await MainActor.run { notificationsOn = enabled }
+                }
+                
+                
                 // Dalga 1-4 grid
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
                     Button(vm.activeMode == .m2210 && vm.isRunning ? (vm.currentEventName.isEmpty ? vm.remainingString : vm.currentEventName) : "22:10 & 03:10 ") {
@@ -523,6 +578,14 @@ struct ContentView: View {
                 }
             }
             .padding(-19)
+        }
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase == .active {
+                Task {
+                    let enabled = await NotificationManager.notificationsEnabled()
+                    await MainActor.run { notificationsOn = enabled }
+                }
+            }
         }
         .task {
             await subVM.loadProducts()
